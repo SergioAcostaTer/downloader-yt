@@ -11,7 +11,7 @@ export default async function download({
 }): Promise<Buffer> {
   return new Promise((resolve, reject) => {
     axios
-      .get(`http://192.168.0.30/download/${id}/${quality}`, {
+      .get(`http://192.168.56.1:3000/download/${id}/${quality}`, {
         responseType: "arraybuffer",
         onDownloadProgress: (progressEvent: AxiosProgressEvent) => {
           onProgress(progressEvent.loaded);
